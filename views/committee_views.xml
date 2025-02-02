@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Define the action first -->
+    <record id="action_organizing_committee" model="ir.actions.act_window">
+        <field name="name">Organizing Committees</field>
+        <field name="res_model">committee.organizing</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Define the menu item after the action -->
+    <menuitem id="menu_committee_root" name="Committees"/>
+    <menuitem id="menu_organizing_committee" name="Organizing Committees" parent="menu_committee_root" action="action_organizing_committee"/>
+
+    <!-- Tree and Form Views for Organizing Committee -->
+    <record id="view_organizing_committee_tree" model="ir.ui.view">
+        <field name="name">committee.organizing.tree</field>
+        <field name="model">committee.organizing</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_organizing_committee_form" model="ir.ui.view">
+        <field name="name">committee.organizing.form</field>
+        <field name="model">committee.organizing</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="member_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name"/>
+                                <field name="profile_picture" widget="image"/>
+                                <field name="bio"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

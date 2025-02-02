@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_member_form" model="ir.ui.view">
+        <field name="name">committee.member.form</field>
+        <field name="model">committee.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="profile_picture" widget="image"/>
+                        <field name="bio"/>
+                        <field name="committee_id"/>
+                        <field name="board_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

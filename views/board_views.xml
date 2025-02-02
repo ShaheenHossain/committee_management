@@ -1,0 +1,48 @@
+<odoo>
+    <record id="view_advisory_board_tree" model="ir.ui.view">
+        <field name="name">committee.advisory.tree</field>
+        <field name="model">committee.advisory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_advisory_board_form" model="ir.ui.view">
+        <field name="name">committee.advisory.form</field>
+        <field name="model">committee.advisory</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="member_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name"/>
+                                <field name="profile_picture" widget="image"/>
+                                <field name="bio"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Define the action first -->
+    <record id="action_advisory_board" model="ir.actions.act_window">
+        <field name="name">Advisory Boards</field>
+        <field name="res_model">committee.advisory</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Define the menu item after the action -->
+    <menuitem id="menu_advisory_board" name="Advisory Boards" parent="menu_committee_root" action="action_advisory_board"/>
+
+
+
+</odoo>
