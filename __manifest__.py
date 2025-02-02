@@ -8,6 +8,7 @@
     'category': 'Tools',
     'depends': ['base'],
     'data': [
+        'security/ir.model.access.csv',
         'views/committee_views.xml',
         'views/board_views.xml',
         'views/member_views.xml',

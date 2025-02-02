@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_committee_organizing,access_committee_organizing,model_committee_organizing,,1,1,1,1
+access_committee_advisory,access_committee_advisory,model_committee_advisory,,1,1,1,1
+access_committee_member,access_committee_member,model_committee_member,,1,1,1,1
